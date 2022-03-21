@@ -8,12 +8,12 @@ default: &default
 
 development: 
   <<: *default
-  database: rails_project_development
+  database: jnceapi_project_development
 
 test:
   <<: *default
-  database: rails_project_test
+  database: jnceapi_project_test
 
 production:
   <<: *default
-  detabase: rails_project_production
+  detabase: jnceapi_project_production
