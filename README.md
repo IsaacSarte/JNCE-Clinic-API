@@ -14,7 +14,7 @@
 
 # Cloning the Repo
 
-* `git clone https://github.com/IsaacSarte/rails-base-project.git`
+* `git clone https://github.com/IsaacSarte/jnce-clinic-api.git`
 
 # After Cloning the Repo
 
