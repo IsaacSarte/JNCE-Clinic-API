@@ -10,7 +10,14 @@ class Api::V1::FeedbacksController < ApplicationController
 
   # GET /feedbacks/1
   def show
-    render json: @feedback
+    if @feedback.empty?
+      render json: {
+        status: 400,
+        message: 'feedback record your trying to access for this user was not found'
+      }, status: :bad_request
+    else
+      render json: @feedback
+    end
   end
 
   # GET /feedbacks/new
@@ -50,7 +57,7 @@ class Api::V1::FeedbacksController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_feedback
-    @feedback = Feedback.find(params[:id])
+    @feedback = Feedback.where(id: params[:id]).and(Feedback.where(user_id: params[:user_id]))
   end
 
   # Only allow a list of trusted parameters through.
