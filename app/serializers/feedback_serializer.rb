@@ -1,6 +1,6 @@
 class FeedbackSerializer < ActiveModel::Serializer
   attributes :id, :message, :created_at
-  
+
   attribute :user_profile do
     {
       data: {
@@ -8,7 +8,6 @@ class FeedbackSerializer < ActiveModel::Serializer
         fullname: object.user.fullname,
         email: object.user.email,
         phone: object.user.phone
-        # created_at: object.user.created_at
       }
     }
   end
