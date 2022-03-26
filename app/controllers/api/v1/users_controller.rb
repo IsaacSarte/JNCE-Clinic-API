@@ -20,7 +20,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: { status: 201, message: 'feedback was successfully send', data: @user }, status: :created
+      render json: { status: 201, message: 'Feedback was successfully send.', data: @user }, status: :created
     else
       render json: { status: 400, data: { message: @user.errors } }, status: :bad_request
     end
@@ -29,7 +29,7 @@ class Api::V1::UsersController < ApplicationController
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      render json: { status: 201, message: 'feedback was successfully updated', data: @user }, status: :created
+      render json: { status: 201, message: 'Feedback was successfully updated.', data: @user }, status: :created
     else
       render json: { status: 400, data: { message: @user.errors } }, status: :bad_request
     end
