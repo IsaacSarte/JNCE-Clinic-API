@@ -8,12 +8,12 @@ module Api
       def respond_with(_resource, _opts = {})
         if current_admin
           render json: {
-            status: { code: 200, message: 'Logged in successfully.' },
+            status: { status: 200, message: 'Logged in successfully.' },
             data: current_admin
           }, status: :ok
         else
           render json: {
-            message: 'Please sign in your account.'
+            message: 'You need to sign up before continuing.'
           }, status: :unauthorized
         end
       end
@@ -22,7 +22,7 @@ module Api
         if current_admin
           render json: {
             status: 200,
-              message: 'logged out successfully'
+              message: 'Logged out successfully'
           }, status: :ok
         else
           render json: {

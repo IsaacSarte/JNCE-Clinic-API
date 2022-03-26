@@ -14,7 +14,7 @@ class Api::V1::FeedbacksController < ApplicationController
     if @feedback.empty?
       render json: {
         status: 400,
-        message: 'feedback record your trying to access for this user was not found'
+        message: 'Feedback record your trying to access for this user was not found.'
       }, status: :bad_request
     else
       render json: @feedback
@@ -34,7 +34,7 @@ class Api::V1::FeedbacksController < ApplicationController
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.save
-      render json: { status: 201, message: 'feedback message was successfully send', data: @feedback }, status: :created
+      render json: { status: 201, message: 'Feedback message was successfully send.', data: @feedback }, status: :created
     else
       render json: { status: 400, data: { message: @feedback.errors } }, status: :bad_request
     end
@@ -43,7 +43,7 @@ class Api::V1::FeedbacksController < ApplicationController
   # PATCH/PUT /feedbacks/1
   def update
     if @feedback.update(feedback_params)
-      render json: { status: 201, message: 'feedback message was successfully updated', data: @feedback }, status: :created
+      render json: { status: 201, message: 'Feedback message was successfully updated.', data: @feedback }, status: :created
     else
       render json: { status: 400, data: { message: @feedback.errors } }, status: :bad_request
     end
