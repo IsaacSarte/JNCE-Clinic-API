@@ -15,6 +15,8 @@ gem 'active_model_serializers', '~> 0.10.12'
 gem "devise", "~> 4.8"
 gem "devise-jwt", "~> 0.9.0"
 
+gem 'dotenv-rails'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
