@@ -10,7 +10,7 @@ module Api
       end
 
       def register_success
-        render json: { message: 'Signed up.' }, status: :created
+        render json: { message: 'Admin successfully added.' }, status: :created
       end
 
       def register_failed

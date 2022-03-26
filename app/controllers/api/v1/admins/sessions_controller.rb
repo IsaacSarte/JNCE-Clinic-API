@@ -6,7 +6,15 @@ module Api
       private
 
       def respond_with(_resource, _opts = {})
-        render json: { message: 'Logged.' }, status: :created
+        if current_admin
+          # render json: { message: 'Logged in successful' }, status: :ok
+          render json: {
+            status: { status: 200, message: 'Logged in sucessfully.' },
+            data: current_admin
+          }, status: :ok
+        else
+          render json: { status: 401, message: 'you need to sign up before continuing' }, status: :unauthorized
+        end
       end
 
       def respond_to_on_destroy
@@ -14,11 +22,11 @@ module Api
       end
 
       def log_out_success
-        render json: { message: 'Logged out.' }, status: :ok
+        render json: { status: 200, message: 'Logged out.' }, status: :ok
       end
 
       def log_out_failure
-        render json: { message: 'Logged out failure.' }, status: :unauthorized
+        render json: { status: 401, message: 'Logged out failure.' }, status: :unauthorized
       end
     end
   end
