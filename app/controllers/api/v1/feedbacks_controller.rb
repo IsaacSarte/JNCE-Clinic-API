@@ -1,5 +1,7 @@
 class Api::V1::FeedbacksController < ApplicationController
   before_action :set_feedback, only: %i[show edit update destroy]
+  before_action :authenticate_admin!, except: [:create]
+    
 
   # GET /feedbacks
   def index
