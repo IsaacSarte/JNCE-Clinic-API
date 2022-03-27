@@ -75,9 +75,9 @@ password | Admin password | Yes |
 
 ##### Headers
 
-Name | Description | Required | 
---- | --- | --- | 
-authorization | token | Yes |
+Name | Required | 
+--- | --- | 
+authorization token | Yes |
 
 * ## **Public User Side/Feature**
 
