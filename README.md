@@ -24,6 +24,7 @@ URL: {{url}}/admins/
     "password": "123456"
 }
 ```
+
 ##### Parameters
 
 Name | Description | Required | 
@@ -45,6 +46,7 @@ URL: {{url}}/admins/sign_in
     "password": "123456"
 }
 ```
+
 ##### Parameters
 
 Name | Description | Required | 
@@ -66,6 +68,7 @@ URL: {{url}}/admins/sign_out
     "password": "123456"
 }
 ```
+
 ##### Parameters
 
 Name | Description | Required | 
@@ -79,21 +82,53 @@ Name | Required |
 --- | --- | 
 authorization token | Yes |
 
-* ## **Public User Side/Feature**
+* ## **Feedback Feature**
 
-# Cloning the Repo
-
-* `git clone https://github.com/IsaacSarte/jnce-clinic-api.git`
-
-# After Cloning the Repo
+### Create Feedback [Create user first to have user_id]
 
 ```
-  $ bundle install
-  $ npm install
-  $ rails db:create
-  $ rails db:migrate
-  $ rails s
+HTTP Method: POST
+URL: {{url}}/api/v1/users
 ```
+
+##### Sample Request Body
+
+```
+{
+    "fullname" : "test user"
+    "email": "testuser@example.com",
+    "phone": 123123
+}
+```
+
+##### Parameters
+
+Name | Description | Required | 
+--- | --- | --- | 
+fullname | User fullname | Yes |
+email | User email | Yes |
+phone | User phone | Yes |
+
+```
+HTTP Method: POST
+URL: {{url}}/api/v1/users/:user_id/feedbacks
+```
+
+##### Sample Request Body
+
+```
+{
+    "user_id": 1,
+    "message": "test feedback message"
+}
+```
+
+##### Parameters
+
+Name | Description | Required | 
+--- | --- | --- | 
+user_id | User id | Yes |
+message | User message | Yes |
 
 # ERD
 ![JNCE Clinic ERD](https://user-images.githubusercontent.com/82153590/160265089-539c5e4e-9125-47a3-a0f6-d6b9b84dce06.png)
