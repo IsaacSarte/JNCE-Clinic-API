@@ -20,7 +20,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
     @feedback = @user.feedbacks.new
     @feedback.message = params[:message]
-
+    
     if @user.save && @feedback.save
       # create_feedback(@user.id, params[:message])
       render json: { status: 201, message: 'Feedback was successfully send.', data: { user: @user, feedback: @feedback } }, status: :created
@@ -55,15 +55,4 @@ class Api::V1::UsersController < ApplicationController
     params.require(:user).permit(:fullname, :email, :phone)
   end
 
-  # def create_feedback(id, message)
-  #   @feedback = Feedback.new
-  #   @feedback.user_id = id
-  #   @feedback.message = message
-  #   if @feedback.save
-  #     render json: { status: 201, message: 'Feedback was successfully send.', data: { user: @user, feedback: @feedback } }, status: :created
-  #   else
-  #     @user.destroy
-  #     render json: { status: 400, data: { message: @feedback.errors } }, status: :bad_request
-  #   end
-  # end
 end
