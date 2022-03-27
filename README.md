@@ -10,6 +10,48 @@
 
 * ## **Admin Side/Feature**
 
+### Admin Sign up
+```
+HTTP Method: POST
+URL: {{url}}/admins/
+```
+
+##### Sample Request Body
+
+```
+{
+    "email": "admin1@example.com",
+    "password": "123456"
+}
+```
+##### Parameters
+
+Name | Description | Required | 
+--- | --- | --- | 
+email | Admin email | Yes |
+password | Admin password | Yes |
+
+### Admin Sign in
+```
+HTTP Method: POST
+URL: {{url}}/admins/sign_in
+```
+
+##### Sample Request Body
+
+```
+{
+    "email": "admin1@example.com",
+    "password": "123456"
+}
+```
+##### Parameters
+
+Name | Description | Required | 
+--- | --- | --- | 
+email | Admin email | Yes |
+password | Admin password | Yes |
+
 * ## **Public User Side/Feature**
 
 # Cloning the Repo
