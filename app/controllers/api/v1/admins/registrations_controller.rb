@@ -14,7 +14,7 @@ module Api
       end
 
       def register_failed
-        render json: { message: 'Signed up failure.' }, status: :unauthorized
+        render json: { message: resource.errors }, status: :unauthorized
       end
     end
   end
