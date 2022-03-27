@@ -1,6 +1,6 @@
 class Api::V1::FeedbacksController < ApplicationController
   before_action :set_feedback, only: %i[show update]
-  # before_action :authenticate_admin!
+  before_action :authenticate_admin!
 
   # GET /feedbacks
   def index
