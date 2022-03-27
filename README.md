@@ -84,7 +84,7 @@ authorization token | Yes |
 
 * ## **Feedback Feature**
 
-### Create Feedback [Create user first to have user_id]
+### Create User Feedback
 
 ```
 HTTP Method: POST
@@ -97,7 +97,8 @@ URL: {{url}}/api/v1/users
 {
     "fullname" : "test user"
     "email": "testuser@example.com",
-    "phone": 123123
+    "phone": 123123,
+    "message": "test message feedback"
 }
 ```
 
@@ -108,26 +109,6 @@ Name | Description | Required |
 fullname | User fullname | Yes |
 email | User email | Yes |
 phone | User phone | Yes |
-
-```
-HTTP Method: POST
-URL: {{url}}/api/v1/users/:user_id/feedbacks
-```
-
-##### Sample Request Body
-
-```
-{
-    "user_id": 1,
-    "message": "test feedback message"
-}
-```
-
-##### Parameters
-
-Name | Description | Required | 
---- | --- | --- | 
-user_id | User id | Yes |
 message | User message | Yes |
 
 # ERD
