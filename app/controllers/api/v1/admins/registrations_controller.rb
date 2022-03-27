@@ -14,7 +14,7 @@ module Api
       end
 
       def register_failed
-        render json: { message: resource.errors }, status: :unauthorized
+        render json: { message: resource.errors.full_messages }, status: :unauthorized
       end
     end
   end
