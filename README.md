@@ -96,4 +96,4 @@ authorization token | Yes |
 ```
 
 # ERD
-![JNCE-Clinic-ERD](https://user-images.githubusercontent.com/82153590/159286700-a2cc342c-1833-4314-b6e8-16b3450a4311.png)
+![JNCE Clinic ERD](https://user-images.githubusercontent.com/82153590/160265089-539c5e4e-9125-47a3-a0f6-d6b9b84dce06.png)
