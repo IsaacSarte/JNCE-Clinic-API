@@ -112,4 +112,4 @@ phone | User phone | Yes |
 message | User message | Yes |
 
 # ERD
-![JNCE Clinic ERD](https://user-images.githubusercontent.com/82153590/160265089-539c5e4e-9125-47a3-a0f6-d6b9b84dce06.png)
+![image](https://user-images.githubusercontent.com/82153590/160395231-103a96d4-d347-4495-81fc-efd598930e10.png)

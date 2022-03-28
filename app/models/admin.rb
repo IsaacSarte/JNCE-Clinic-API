@@ -6,6 +6,8 @@ class Admin < ApplicationRecord
          :registerable,
          jwt_revocation_strategy: JwtDenylist
 
+  has_many :appointment, dependent: :destroy
+
   validates :email, presence: true, uniqueness: true, format: { with: Devise.email_regexp }
   validates :password, presence: true, length: { minimum: 6 }
 end
