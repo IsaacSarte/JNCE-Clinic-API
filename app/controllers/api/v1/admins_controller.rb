@@ -1,6 +1,6 @@
 class Api::V1::AdminsController < ApplicationController
   before_action :set_admin, only: %i[show update]
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
 
   def index; end
 
