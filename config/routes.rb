@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :services, only: [:index]
+      post '/appointment', to: 'users#appointment'
       resources :users do
         resources :feedbacks
         resources :appointments

@@ -4,8 +4,7 @@ class Api::V1::FeedbacksController < ApplicationController
 
   # GET /feedbacks
   def index
-    @feedbacks = Feedback.all
-    @feedbacks = @feedbacks.where(user_id: params[:user_id]) if params[:user_id]
+    @feedbacks = Feedback.where(user_id: params[:user_id]).sort
     render json: @feedbacks, status: :ok
   end
 
