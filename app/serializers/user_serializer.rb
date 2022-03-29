@@ -4,4 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   attribute :user_feedback do
     object.feedbacks
   end
+  attribute :appointment do
+    object.appointments
+  end
 end
