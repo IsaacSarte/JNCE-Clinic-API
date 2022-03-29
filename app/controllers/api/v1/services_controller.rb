@@ -1,6 +1,12 @@
-class ServicesController < ApplicationController
-  before_action :set_service
-  def index; end
+class Api::V1::ServicesController < ApplicationController
+  before_action :set_service, only: %i[show]
+
+  def index
+    @services = Service.all.sort
+    render json: @services
+  end
+
+  def show; end
 
   def create
     @service = Service.new(service_params)

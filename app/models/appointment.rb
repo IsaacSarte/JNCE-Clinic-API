@@ -1,5 +1,6 @@
 class Appointment < ApplicationRecord
   belongs_to :user
   belongs_to :service
-  belongs_to :admin
+  validates :schedule_date, presence: true
+  validates :status, presence: true
 end
