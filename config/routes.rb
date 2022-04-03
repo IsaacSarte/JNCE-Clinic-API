@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :admins, controllers: {
     sessions: 'api/v1/admins/sessions',
     registrations: 'api/v1/admins/registrations'
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :services, only: [:index]
       resources :appointments, only: [:index, :show, :create]
+      resources :logs, only: [:index, :show, :create]
       resources :users do
         resources :feedbacks
       end

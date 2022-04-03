@@ -5,7 +5,7 @@ class Api::V1::AppointmentsController < ApplicationController
   # GET /appointments
   def index
     # @appointments = Appointment.where(user_id: params[:user_id]).sort
-    @appointments = Appointment.all
+    @appointments = Appointment.all.sort
     render json: @appointments, status: :ok
   end
 
@@ -14,7 +14,7 @@ class Api::V1::AppointmentsController < ApplicationController
     if @appointment.empty?
       render json: {
         status: 400,
-        message: 'Appointment record your trying to access for this user was not found.'
+        message: 'Appointment record your trying to access was not found.'
       }, status: :bad_request
     else
       render json: @appointment
