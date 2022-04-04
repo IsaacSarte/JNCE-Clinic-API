@@ -1,10 +1,9 @@
 class Api::V1::AppointmentsController < ApplicationController
-  before_action :set_appointment, only: %i[show]
+  before_action :set_appointment, only: %i[show update]
   before_action :authenticate_admin!, except: [:create]
 
   # GET /appointments
   def index
-    # @appointments = Appointment.where(user_id: params[:user_id]).sort
     @appointments = Appointment.all.sort
     render json: @appointments, status: :ok
   end
@@ -27,6 +26,15 @@ class Api::V1::AppointmentsController < ApplicationController
       render json: { status: 201, message: 'You are successfully scheduled.', data: { appointment: @appointment } }, status: :created
     else
       render json: { status: 400, error: { appointment: @appointment.errors } }, status: :bad_request
+    end
+  end
+
+
+  def update
+    if @appointment.update(appointment_params)
+      render json: { status: 201, message: 'Appointment was successfully updated.', data: @appointment }, status: :created
+    else
+      render json: { status: 400, data: { message: @appointment.errors } }, status: :bad_request
     end
   end
 
