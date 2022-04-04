@@ -2,6 +2,7 @@ class Appointment < ApplicationRecord
   belongs_to :service
   has_one :log, dependent: :destroy
   validates :status, presence: true
+  validates :email, presence: true
   validates :fullname, presence: true
   validates :title, presence: true
   validates :location, presence: true
