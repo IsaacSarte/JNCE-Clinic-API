@@ -29,7 +29,6 @@ class Api::V1::AppointmentsController < ApplicationController
     end
   end
 
-
   def update
     if @appointment.update(appointment_params)
       render json: { status: 201, message: 'Appointment was successfully updated.', data: @appointment }, status: :created
