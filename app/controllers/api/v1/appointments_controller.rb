@@ -1,6 +1,6 @@
 class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: %i[show update]
-  before_action :authenticate_admin!, except: [:create]
+  before_action :authenticate_admin!, except: %i[create update]
 
   # GET /appointments
   def index
