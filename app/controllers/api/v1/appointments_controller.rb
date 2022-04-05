@@ -31,6 +31,7 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def update
     if @appointment.update(appointment_params)
+      AppointmentMailer.status_changed(@appointment.email).deliver_now
       render json: { status: 201, message: 'Appointment was successfully updated.', data: @appointment }, status: :created
     else
       render json: { status: 400, data: { message: @appointment.errors } }, status: :bad_request
@@ -41,7 +42,7 @@ class Api::V1::AppointmentsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_appointment
-    @appointment = Appointment.where(id: params[:id])
+    @appointment = Appointment.where(id: params[:id]).first
   end
 
   def appointment_params
