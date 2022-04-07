@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
-  include ActionController::RequestForgeryProtection
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::ParameterMissing, with: :params_not_found
-  protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private

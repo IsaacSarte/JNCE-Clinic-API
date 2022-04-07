@@ -5,7 +5,7 @@ RSpec.describe 'Registrations', type: :request do
     it 'registers' do
       post '/admins/', params: { admin: {
         email: 'admin@email.com',
-         password: 'password'
+         password: 'password', name: 'name'
       } }
 
       expect(response).to have_http_status(:created)
