@@ -8,7 +8,7 @@ service_type = [
 "Ultrasound",
 "RTPCR Testing"
 ]
-Admin.create(email: ENV["EMAIL"], password: ENV["PASSWORD"])
+Admin.create(email: ENV["EMAIL"], password: ENV["PASSWORD"], name: ENV["USERNAME"])
 service_type.each do |service|
     Service.create(name: service)
 end
