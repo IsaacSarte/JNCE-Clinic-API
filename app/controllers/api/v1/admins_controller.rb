@@ -25,6 +25,6 @@ class Api::V1::AdminsController < ApplicationController
   end
 
   def admin_params
-    params.require(:admin).permit(:email, :password)
+    params.require(:admin).permit(:email, :password, :name)
   end
 end
