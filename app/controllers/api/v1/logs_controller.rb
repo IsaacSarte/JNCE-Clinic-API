@@ -1,6 +1,6 @@
 class Api::V1::LogsController < ApplicationController
   before_action :set_log, only: [:show]
-  before_action :authenticate_admin!, except: [:create]
+  before_action :authenticate_admin!, except: [:create, :show]
 
   # GET /logs
   def index
@@ -33,6 +33,6 @@ class Api::V1::LogsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def log_params
-    params.require(:log).permit(:message, :appointment_id, :admin_id)
+    params.require(:log).permit(:appointment_id, :admin_id)
   end
 end

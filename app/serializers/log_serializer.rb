@@ -1,5 +1,5 @@
 class LogSerializer < ActiveModel::Serializer
-  attributes :id, :message
+  attributes :id
 
   attribute :appointment do
     object.appointment
