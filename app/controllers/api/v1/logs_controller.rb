@@ -1,6 +1,6 @@
 class Api::V1::LogsController < ApplicationController
   before_action :set_log, only: [:show]
-  before_action :authenticate_admin!, except: [:create, :show]
+  before_action :authenticate_admin!, except: %i[create show]
 
   # GET /logs
   def index
