@@ -150,7 +150,7 @@ URL: {{url}}/api/v1/appointments/{{id}}
 
 ```
 {
-    "status" : "done"
+    "status": "done"
 }
 ```
 
@@ -200,7 +200,7 @@ URL: {{url}}/api/v1/logs
 
 ```
 {
-    "appointment_id" : 1
+    "appointment_id": 1
     "admin_id": 1
 }
 ```
@@ -243,7 +243,7 @@ URL: {{url}}/api/v1/users
 
 ```
 {
-    "fullname" : "test user"
+    "fullname": "test user"
     "email": "testuser@example.com",
     "phone": 01212312312,
     "message": "test message feedback"
@@ -258,6 +258,55 @@ fullname | User fullname | Yes |
 email | User email | Yes |
 phone | User phone | Yes |
 message | User message | Yes |
+
+===============================
+
+<h3><strong>Note: Before booking appoinment, see this link for google oAuth endpoints: </strong></h3>
+
+```
+https://github.com/Zhi0105/jnce-calendar-api
+```
+
+<h3><strong>After connecting google oAuth, continue to Book Appointment Feature below.</strong></h3>
+
+* ## **Book Appointment Feature**
+
+### Scheduling Appointment
+
+```
+HTTP Method: POST
+URL: {{url}}/api/v1/appointments
+```
+
+##### Sample Request Body
+
+```
+{
+   "service_id": 1,
+   "status": "pending",
+   "fullname": "test fullname",
+   "location": "Subd., City, PH",
+   "start_datetime": Date.today,
+   "end_datetime": Date.today,
+   "title": "service title",
+   "email": "appointment@email.com"
+}
+```
+
+##### Parameters
+
+Name | Description | Required | 
+--- | --- | --- | 
+service_id | Service id | Yes |
+status | Appointment initial status | Yes |
+fullname | User fullname | Yes |
+location | Medical Clinic's location not User's | Yes |
+start_datetime | Appointment start date time | Yes |
+end_datetime | Appointment end date time | Yes |
+title | Service title | Yes |
+email | User email | Yes |
+
+===============================
 
 # ERD
 ![image](https://user-images.githubusercontent.com/82153590/162556701-0e728985-33b6-4a2b-8886-c21ef3b6bba9.png)
